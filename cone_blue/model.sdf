@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="cone_blue">
+    <pose>0 0 0.1 1.5708 0 0</pose>
+    <static>true</static>
+    <link name="body">
+      <collision name="collision">
+        <geometry>
+	   <mesh>
+             <uri>model://cone_blue/meshes/cone.stl</uri>
+	     <scale>0.004 0.004 0.004</scale>
+           </mesh>
+         </geometry>
+      </collision>
+
+      <visual name="visual">
+         <geometry>
+           <mesh>
+             <uri>model://cone_blue/meshes/cone.stl</uri>
+	     <scale>0.004 0.004 0.004</scale>
+           </mesh>
+         </geometry>
+	
+         <material>
+    	  <ambient>0.2 0.2 1 1</ambient>
+    	  <diffuse>0.2 0.2 1 1</diffuse>
+    	  <specular>0.1 0.1 0.1 1</specular>
+    	  <emissive>0 0 0 0</emissive>
+  	</material>
+       </visual>
+    </link>
+  </model>
+</sdf>

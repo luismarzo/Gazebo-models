@@ -1,41 +1,48 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
-  <model name="Pine Tree">
-    <pose>0 0 0  0 0 0</pose>
+<sdf version="1.6">
+  <model name="pine_tree">
     <static>true</static>
     <link name="link">
-      <inertial>
-        <mass>40.0</mass>
-        <inertia>
-          <ixx>1</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1</iyy>
-          <iyz>0</iyz>
-          <izz>1</izz>
-        </inertia>
-      </inertial>
-
       <collision name="collision">
-        <geometry>
-          <cylinder>
-            <length>5</length>
-            <radius>0.3</radius>
-          </cylinder>
-        </geometry>
-        <pose>1.25 1.25 2.5  0 0 0</pose>
-      </collision>
-      
-      <visual name="visual">
         <geometry>
           <mesh>
             <uri>model://pine_tree/meshes/pine_tree.dae</uri>
-            <scale>1.5 1.5 1.5</scale>
           </mesh>
-	      </geometry>
-        <!--<material>
-          <ambient>1 1 1</ambient>
-        </material>-->
+        </geometry>
+      </collision>
+      <visual name="branch">
+        <geometry>
+          <mesh>
+            <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+            <submesh>
+              <name>Branch</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://pine_tree/materials/scripts/</uri>
+            <uri>model://pine_tree/materials/textures/</uri>
+            <name>PineTree/Branch</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="bark">
+        <geometry>
+          <mesh>
+            <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+            <submesh>
+              <name>Bark</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://pine_tree/materials/scripts/</uri>
+            <uri>model://pine_tree/materials/textures/</uri>
+            <name>PineTree/Bark</name>
+          </script>
+        </material>
       </visual>
     </link>
   </model>
